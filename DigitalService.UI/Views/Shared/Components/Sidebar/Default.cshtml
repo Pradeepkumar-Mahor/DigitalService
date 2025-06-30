@@ -1,0 +1,91 @@
+﻿@model IEnumerable< DigitalService.UI.Models.SidebarMenu>
+<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+    <!--begin::Sidebar Brand-->
+    <div class="sidebar-brand">
+        <!--begin::Brand Link-->
+        <a href="/" class="brand-link">
+            <img src="~/lib/admin-lte/dist/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow">
+            <span class="brand-text fw-light">AdminLTE 4</span>
+        </a>
+        <!--end::Brand Link-->
+    </div>
+    <!--end::Sidebar Brand-->
+    <!--begin::Sidebar Wrapper-->
+    <div class="sidebar-wrapper">
+        <nav class="mt-2">
+            <!--begin::Sidebar Menu-->
+            <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+                @foreach (var menu in Model as IEnumerable<SidebarMenu>)
+                {
+                    if (menu.Type == SidebarMenuType.Header)
+                    {
+                        <li class="nav-item"><a class="nav-link">@menu.Name</a></li>
+                    }
+                    else if (menu.Type == SidebarMenuType.Link)
+                    {
+                        var active = string.Empty;
+                        if (menu.URLPath != "/" && @Context.Request.Path.Value.EndsWith(menu.URLPath))
+                        {
+                            active = "active";
+                        }
+                        <li class="nav-item">
+                            <a href="@menu.URLPath" class="nav-link @active">
+                                <i class="nav-icon @menu.IconClassName"></i>
+                                <p class="container">@menu.Name</p>
+                                <span>
+                                    @{
+                                        if (menu.LinkCounter.Item1 > 0)
+                                        {
+                                            <small class="badge float-end bg-primary">@menu.LinkCounter.Item1</small>
+                                        }
+                                        if (menu.LinkCounter.Item2 > 0)
+                                        {
+                                            <small class="badge float-end bg-success">@menu.LinkCounter.Item2</small>
+                                        }
+                                        if (menu.LinkCounter.Item3 > 0)
+                                        {
+                                            <small class="badge float-end bg-danger">@menu.LinkCounter.Item3</small>
+                                        }
+                                    }
+                                </span>
+                            </a>
+                        </li>
+                    }
+                    else if (menu.Type == SidebarMenuType.Tree)
+                    {
+                        var active = string.Empty;
+                        var menuopen = string.Empty;
+                        if (menu.TreeChild.Any(x => @Context.Request.Path.Value.EndsWith(x.URLPath)))
+                        {
+                            active = "active";
+                            menuopen = "menu-open";
+                        }
+
+                        <li class="nav-item has-treeview @active @menuopen">
+                            <a href="#" class="nav-link @active">
+                                <i class="nav-icon @menu.IconClassName"></i> <p>@menu.Name <i class="nav-arrow bi bi-chevron-right"></i></p>
+                            </a>
+                            <ul class="nav nav-treeview" style="box-sizing: border-box; display: block;">
+                                @foreach (SidebarMenu subMenu in menu.TreeChild)
+                                {
+                                    active = string.Empty;
+                                    if (Context.Request.Path.Value.EndsWith(subMenu.URLPath))
+                                    {
+                                        active = "active";
+                                    }
+                                    <li class="nav-item">
+                                        <a href="@subMenu.URLPath" class="nav-link @active">
+                                            <i class="nav-icon @subMenu.IconClassName"></i>
+                                            <p>@subMenu.Name</p>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                }
+            </ul>
+            <!--end::Sidebar Menu-->
+        </nav>
+    </div>
+</aside>

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-DigitalService.UI-3066d82e-8ff8-4da2-92f4-07c63c742338</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+	  <PackageReference Include="DeviceDetector.NET.NetCore" Version="3.9.2.2" />
+
+	  <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="9.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.6" />
+    <PackageReference Include="PushNotifications.Server.AspNetCore" Version="1.3.35" />
+    <PackageReference Include="WebEssentials.AspNetCore.PWA" Version="1.0.85" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.6" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.6" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.6" />
+	  <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.6" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.6" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.6" />
+	  <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.6" />
+	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0">
+		  <PrivateAssets>All</PrivateAssets>
+	  </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalService.DataAccess\DigitalService.DataAccess.csproj" />
+    <ProjectReference Include="..\DigitalService.ServiceDefaults\DigitalService.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>
