@@ -7,55 +7,34 @@
       "destination": "wwwroot/lib/bootstrap/"
     },
     {
-      "library": "jquery@3.7.1",
-      "destination": "wwwroot/lib/jquery/"
-    },
-    {
-      "library": "jquery-validate@1.21.0",
-      "destination": "wwwroot/lib/jquery-validation/"
-    },
-    {
-      "library": "jquery-validation-unobtrusive@4.0.0",
-      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
-    },
-    {
-      "library": "datatables.net@2.2.1",
+      "provider": "cdnjs",
+      "library": "datatables@1.10.21",
       "destination": "wwwroot/lib/datatables/"
     },
     {
-      "library": "datatables.net-bs5@2.2.1",
-      "destination": "wwwroot/lib/datatables-bs/"
-    },
-    {
-      "library": "pace@1.2.4",
-      "destination": "wwwroot/lib/pace/"
-    },
-    {
-      "library": "fastclick@1.0.6",
-      "destination": "wwwroot/lib/fastclick/"
-    },
-    {
-      "library": "bootstrap-icons@1.11.3",
-      "destination": "wwwroot/lib/bootstrap-icons/"
-    },
-    {
+      "provider": "cdnjs",
       "library": "icheck-bootstrap@3.0.1",
       "destination": "wwwroot/lib/icheck-bootstrap/"
     },
     {
-      "provider": "jsdelivr",
-      "library": "admin-lte@4.0.0-beta3",
-      "destination": "wwwroot/lib/admin-lte/",
-      "files": [
-        "dist/css/adminlte.css",
-        "dist/css/adminlte.css.map",
-        "dist/css/adminlte.min.css",
-        "dist/js/adminlte.js",
-        "dist/js/adminlte.js.map",
-        "dist/js/adminlte.min.js",
-        "dist/js/adminlte.min.js.map",
-        "dist/assets/img/AdminLTELogo.png"
-      ]
+      "provider": "cdnjs",
+      "library": "bootstrap-icons@1.13.1",
+      "destination": "wwwroot/lib/bootstrap-icons/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "pace@1.2.4",
+      "destination": "wwwroot/lib/pace/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "fastclick@1.0.6",
+      "destination": "wwwroot/lib/fastclick/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "jquery@3.7.1",
+      "destination": "wwwroot/lib/jquery/"
     }
   ]
 }
