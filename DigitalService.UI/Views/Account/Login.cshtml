@@ -17,7 +17,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DigitalService.UI 4 | Login Page</title>
+    <title>CoE Digital Service | Login Page</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
@@ -50,6 +50,7 @@
                 <p class="login-box-msg">Sign in to start your session</p>
 
                 <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
                     <div class="input-group mb-3">
                         <input asp-for="Email" type="email" class="form-control" placeholder="Email" autofocus />

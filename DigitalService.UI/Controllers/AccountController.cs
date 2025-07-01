@@ -1,4 +1,5 @@
-﻿using DigitalService.Domain.BaseModel;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using DigitalService.Domain.BaseModel;
 using DigitalService.UI.Models.AccountViewModels;
 using DigitalService.UI.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -22,18 +23,21 @@ namespace DigitalService.UI.Controllers
 
         private readonly ILogger _logger;
 
+        private readonly INotyfService _notifyService;
+
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
              ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory, INotyfService notyfService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+            _notifyService = notyfService;
         }
 
         //
@@ -63,6 +67,10 @@ namespace DigitalService.UI.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
+                    _notifyService.Success("User logged in");
+
+                    //_notifyService.Custom("Custom Notification - closes in 5 seconds.", 5, "whitesmoke", "fa fa-gear");
+
                     return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
@@ -72,11 +80,13 @@ namespace DigitalService.UI.Controllers
                 if (result.IsLockedOut)
                 {
                     _logger.LogWarning(2, "User account locked out.");
+                    _notifyService.Error("User account locked out.");
                     return View("Lockout");
                 }
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    _notifyService.Error("Invalid login attempt.");
                     return View(model);
                 }
             }

@@ -7,8 +7,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DigitalService.UI v4 | Starter</title>
+    <title>CoE Digital Service </title>
     <!-- Tell the browser to be responsive to screen width -->
+    <link rel="manifest" href="~/manifest.json" crossorigin="use-credentials">
+
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
@@ -59,7 +61,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary app-loaded sidebar-open">
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary app-loaded sidebar-open skin-blue">
     <div class="app-wrapper">
         <!-- Main Header -->
         @await Component.InvokeAsync("Header")
@@ -107,8 +109,9 @@ desired effect
     user experience. Slimscroll is required when using the
     fixed layout. -->
     @RenderSection("scripts", required: false)
+    @await Component.InvokeAsync("Notyf")
     <script>
-        // useSubmitClass();
+         useSubmitClass();
         useDeleteConfirmation();
     </script>
 </body>

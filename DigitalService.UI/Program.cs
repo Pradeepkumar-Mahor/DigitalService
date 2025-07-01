@@ -163,6 +163,9 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapStaticAssets();
 
+//Add middleware here
+app.UseMiddleware<RequestLoggingMiddleware>();
+
 //app.MapControllerRoute(
 //    name: "default",
 //    pattern: "{controller=Home}/{action=Index}/{id?}")
