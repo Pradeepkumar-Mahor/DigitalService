@@ -1,4 +1,5 @@
-﻿using DigitalService.Domain.DbContext;
+﻿using DigitalService.Domain.BaseModel;
+using DigitalService.Domain.DbContext;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,9 @@ namespace DigitalService.UI.Controllers
         // GET: /<controller>/
         public ViewResult Index()
         {
-            return View(_context.UserAuditEvents.ToList());
+            var userAudit = _context.UserAuditEvents.ToList();
+
+            return View(userAudit);
         }
     }
 }

@@ -1,8 +1,9 @@
-﻿<link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap4.min.css" asp-append-version="true" />
+﻿@using DigitalService.Domain.BaseModel
+<link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap4.min.css" asp-append-version="true" />
 <script src="~/lib/datatables/js/jquery.dataTables.min.js" asp-append-version="true"></script>
 <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js" asp-append-version="true"></script>
 
-@model System.Collections.Generic.IEnumerable<DigitalService.UI.Models.UserAudit>
+@model IEnumerable<UserAudit>
 
 @{
     ViewData["Title"] = "User Logs";
