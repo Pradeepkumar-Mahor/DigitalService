@@ -11,13 +11,21 @@ namespace DigitalService.UI.Common
         public enum Module
         {
             Home,
+
             About,
+
             Contact,
+
             Error,
+
             Login,
+
             Register,
+
             SuperAdmin,
+
             Role,
+
             UserLogs
         }
 
@@ -58,6 +66,7 @@ namespace DigitalService.UI.Common
                         URLPath = "/",
                         LinkCounter = counter,
                     };
+
                 case Module.Login:
                     return new SidebarMenu
                     {
@@ -67,6 +76,7 @@ namespace DigitalService.UI.Common
                         URLPath = "/Account/Login",
                         LinkCounter = counter,
                     };
+
                 case Module.Register:
                     return new SidebarMenu
                     {
@@ -76,6 +86,7 @@ namespace DigitalService.UI.Common
                         URLPath = "/Account/Register",
                         LinkCounter = counter,
                     };
+
                 case Module.About:
                     return new SidebarMenu
                     {
@@ -85,6 +96,7 @@ namespace DigitalService.UI.Common
                         URLPath = "/Home/About",
                         LinkCounter = counter,
                     };
+
                 case Module.Contact:
                     return new SidebarMenu
                     {
@@ -94,6 +106,7 @@ namespace DigitalService.UI.Common
                         URLPath = "/Home/Contact",
                         LinkCounter = counter,
                     };
+
                 case Module.Error:
                     return new SidebarMenu
                     {
@@ -103,6 +116,7 @@ namespace DigitalService.UI.Common
                         URLPath = "/Home/Error",
                         LinkCounter = counter,
                     };
+
                 case Module.SuperAdmin:
                     return new SidebarMenu
                     {
@@ -112,6 +126,7 @@ namespace DigitalService.UI.Common
                         URLPath = "/SuperAdmin",
                         LinkCounter = counter,
                     };
+
                 case Module.Role:
                     return new SidebarMenu
                     {
@@ -121,6 +136,7 @@ namespace DigitalService.UI.Common
                         URLPath = "/Role",
                         LinkCounter = counter,
                     };
+
                 case Module.UserLogs:
                     return new SidebarMenu
                     {

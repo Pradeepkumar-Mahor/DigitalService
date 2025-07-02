@@ -58,7 +58,7 @@
                         if (menu.TreeChild.Any(x => @Context.Request.Path.Value.EndsWith(x.URLPath)))
                         {
                             active = "active";
-                            menuopen = "menu-open";
+                            menuopen = "nav-item";
                         }
 
                         <li class="nav-item has-treeview @active @menuopen">
