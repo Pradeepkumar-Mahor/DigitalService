@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalService.UI.Controllers
 {
-    [Authorize(Roles = "SuperAdmins")]
+    [Authorize(Roles = "SuperAdmin")]
     public class SuperAdminController : Controller
     {
         private UserManager<ApplicationUser> userManager;

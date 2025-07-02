@@ -34,7 +34,7 @@ namespace DigitalService.UI.ViewComponents
                 ModuleHelper.AddModule(ModuleHelper.Module.Register, Tuple.Create(1, 1, 1)),
             };
 
-            if (User.IsInRole("SuperAdmins"))
+            if (User.IsInRole("SuperAdmin"))
             {
                 sidebars.Add(ModuleHelper.AddTree("Administration"));
                 sidebars.Last().TreeChild = new List<SidebarMenu>()

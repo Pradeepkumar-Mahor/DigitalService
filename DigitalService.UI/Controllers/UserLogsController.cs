@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalService.UI.Controllers
 {
-    [Authorize(Roles = "SuperAdmins")]
+    [Authorize(Roles = "SuperAdmin")]
     public class UserLogsController : Controller
     {
         private readonly ApplicationDbContext _context;

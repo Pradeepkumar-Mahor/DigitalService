@@ -8,7 +8,7 @@ using System.Net.NetworkInformation;
 
 namespace DigitalService.UI.Controllers
 {
-    [Authorize(Roles = "SuperAdmins")]
+    [Authorize(Roles = "SuperAdmin")]
     public class RoleController : Controller
     {
         private RoleManager<IdentityRole> roleManager;

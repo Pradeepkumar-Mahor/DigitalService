@@ -38,6 +38,8 @@ builder.Services.AddScoped<UserManager<ApplicationUser>>();
 
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, AppClaimsPrincipalFactory>();
 
+//builder.Services.AddScoped<SignInManager<ApplicationUser>, AuditableSignInManager<ApplicationUser>>();
+
 //var mvcBuilder = builder.Services.AddMvc(config =>
 //{
 //    var policy = new AuthorizationPolicyBuilder()
