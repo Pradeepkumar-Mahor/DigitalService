@@ -55,7 +55,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Lockout.MaxFailedAccessAttempts = 3;
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
     options.Lockout.AllowedForNewUsers = true;
-    options.SignIn.RequireConfirmedEmail = true;
+    options.SignIn.RequireConfirmedEmail = false;
 });
 
 builder.Services.ConfigureApplicationCookie(option =>
@@ -180,5 +180,5 @@ app.UseEndpoints(endpoints =>
 
 app.MapRazorPages()
    .WithStaticAssets();
-
+DataSeed.Seed(app.Services).Wait();
 app.Run();

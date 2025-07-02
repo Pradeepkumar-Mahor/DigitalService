@@ -63,7 +63,8 @@ namespace DigitalService.UI.Controllers
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
 
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe,
+                        lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
@@ -80,13 +81,11 @@ namespace DigitalService.UI.Controllers
                 if (result.IsLockedOut)
                 {
                     _logger.LogWarning(2, "User account locked out.");
-                    _notifyService.Error("User account locked out.");
                     return View("Lockout");
                 }
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    _notifyService.Error("Invalid login attempt.");
                     return View(model);
                 }
             }
